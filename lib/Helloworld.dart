@@ -1,10 +1,22 @@
 import 'package:flutter/material.dart';
-class HelloWorld extends StatelessWidget {
+
+
+class HelloWorldScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text("Hello World"),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Hello World'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
+      body: Center(
+        child: Text('Hello, World!'),
+      ),
     );
   }
 }
-

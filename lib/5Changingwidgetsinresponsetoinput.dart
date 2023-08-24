@@ -32,8 +32,8 @@ class _CounterState extends State<Counter> {
         child:
             Row(mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                 ElevatedButton(onPressed: _increment, child: Text('increment')),
-                  SizedBox(
+                 ElevatedButton(onPressed: _increment, child: const Text('increment')),
+                  const SizedBox(
                    width: 16,
                   ),
                Text('Count is $_counter')
@@ -61,7 +61,7 @@ class CounterIncrementer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(onPressed: onPresssed, child: Text('increment'));
+    return ElevatedButton(onPressed: onPresssed, child: const Text('increment'));
   }
 }
 
@@ -98,7 +98,7 @@ class _Counter2State extends State<Counter2> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             CounterIncrementer(onPresssed: _increment),
-            SizedBox(width: 20),
+            const SizedBox(width: 20),
             CounterDisplay(num: _counter)
           ],
         ),

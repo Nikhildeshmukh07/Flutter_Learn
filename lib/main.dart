@@ -3,6 +3,7 @@ import 'package:flutter_learn/3TutorialHome.dart';
 import '4.Handling gestures.dart';
 import '5Changingwidgetsinresponsetoinput.dart';
 import 'Dashboard.dart';
+import '6DrawerWidgetinFlutter.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,8 +16,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: DashboardScreen(),
-    //  home : Counter2(),
+    //  home: DashboardScreen(),
+     home : MyHomePage(),
     );
   }
 }

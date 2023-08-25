@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/3TutorialHome.dart';
+import 'package:flutter_learn/8RichtextWidget.dart';
 import '4.Handling gestures.dart';
 import '5Changingwidgetsinresponsetoinput.dart';
+import '7Appbars.dart';
 import 'Dashboard.dart';
 import '6DrawerWidgetinFlutter.dart';
 
@@ -16,8 +18,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-    //  home: DashboardScreen(),
-     home : MyHomePage(),
+      home: const DashboardScreen(),
+  //  home : MyhomepageRichTextBox(),
     );
   }
 }

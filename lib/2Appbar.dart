@@ -23,7 +23,6 @@ class MyAppBar extends StatelessWidget {
     );
   }
 }
-
 class MyScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

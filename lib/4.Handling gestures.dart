@@ -20,13 +20,13 @@ class MyButton extends StatelessWidget {
         child: Center(
           child: Container(
             height: 40,
-            padding: EdgeInsets.all(8),
-            margin: EdgeInsets.symmetric(horizontal: 8),
+            padding: const EdgeInsets.all(8),
+            margin: const EdgeInsets.symmetric(horizontal: 8),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
                   color: Colors.lightBlueAccent[400],
             ),
-            child: Center(child: Text('prees and see on console')),
+            child: const Center(child: Text('prees and see on console')),
       ),
         ),
       ),

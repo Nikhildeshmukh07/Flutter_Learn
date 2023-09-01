@@ -3,6 +3,8 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter_learn/2Appbar.dart';
 import 'package:flutter_learn/3TutorialHome.dart';
 import 'package:flutter_learn/8RichtextWidget.dart';
+import 'package:flutter_learn/9TabBarDemo.dart';
+import '10HorizontalList.dart';
 import '1Helloworld.dart';
 import '4.Handling gestures.dart';
 import '5Changingwidgetsinresponsetoinput.dart';
@@ -102,6 +104,50 @@ class DashboardScreen extends StatelessWidget {
               // Use DropdownMenuItem
               DropdownMenuItem<String>(
                   value: 'MyHomePage', child: Text('6DrawerWidgetinFlutter')),
+              DropdownMenuItem<String>(
+                  value: 'Appbars', child: Text('Appbars in built widgets')),
+              DropdownMenuItem<String>(
+                  value: 'MyhomepageRichTextBox', child: Text('8.Rich text Box')),
+
+
+              // Add more items here
+            ],
+          ),
+          const Text('Ui Componets'),
+          DropdownButton2<String>(
+            hint: const Text('-select-'),
+            // Displayed when no item is selected
+            onChanged: (String? newValue) {
+              if (newValue == 'TabBarDemo') {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const TabBarDemo(
+
+                        )));
+              }
+              else if (newValue == 'MyList') {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MyList(
+
+                        )));
+              }
+              else if (newValue == 'MyhomepageRichTextBox') {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MyhomepageRichTextBox(
+
+                        )));
+              }
+              // You can add more else if blocks for additional items
+            },
+            items: const <DropdownMenuItem<String>>[
+              // Use DropdownMenuItem
+              DropdownMenuItem<String>(
+                  value: 'TabBarDemo', child: Text('9TabBarDemo')),
               DropdownMenuItem<String>(
                   value: 'Appbars', child: Text('Appbars in built widgets')),
               DropdownMenuItem<String>(

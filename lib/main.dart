@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/11ExpansionTileCard.dart';
 import 'package:flutter_learn/13Dialogs.dart';
+import 'package:flutter_learn/14Progressbar.dart';
+import 'package:flutter_learn/15Staggeredgridview.dart';
 
 import 'package:flutter_learn/3TutorialHome.dart';
 import 'package:flutter_learn/8RichtextWidget.dart';
@@ -25,7 +27,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Dialogs(),
+      home: Staggredgridview(),
+      //
       //home: RunTileCard(),
     );
   }

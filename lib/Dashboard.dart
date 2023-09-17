@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
+import 'package:flutter_learn/13Dialogs.dart';
+import 'package:flutter_learn/14Progressbar.dart';
 import 'package:flutter_learn/2Appbar.dart';
 import 'package:flutter_learn/3TutorialHome.dart';
 import 'package:flutter_learn/8RichtextWidget.dart';
@@ -132,6 +134,18 @@ class DashboardScreen extends StatelessWidget {
                     MaterialPageRoute(
                         builder: (context) => const Datepickerwidget()));
               }
+              else if (newValue == 'Dialogbox') {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Dialogs()));
+              }
+              else if (newValue == 'Loader') {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Loader()));
+              }
               // You can add more else if blocks for additional items
             },
             items: const <DropdownMenuItem<String>>[
@@ -144,6 +158,10 @@ class DashboardScreen extends StatelessWidget {
                   value: 'RunTileCard', child: Text('11.Tile card')),
               DropdownMenuItem<String>(
                   value: 'Datepickerwidget', child: Text('12.Date picker')),
+              DropdownMenuItem<String>(
+                  value: 'Dialogbox', child: Text('13.Dialog box')),
+              DropdownMenuItem<String>(
+                  value: 'Loader', child: Text('14. circular progress bar and line bar')),
 
               // Add more items here
             ],

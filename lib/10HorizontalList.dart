@@ -28,9 +28,9 @@ class MyList extends StatelessWidget {
               width: 240.0,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage(
-                    'assets/images/1.jpg'),
-                  fit: BoxFit.fill
+                    image: AssetImage(
+                        'assets/images/1.jpg'),
+                    fit: BoxFit.fill
                 ),
                 shape: BoxShape.rectangle,
 

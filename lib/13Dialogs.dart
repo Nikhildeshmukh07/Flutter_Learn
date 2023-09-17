@@ -15,12 +15,32 @@ class Dialogs extends StatelessWidget {
           },
         ),
       ),
-      body: AlertDialog(
-        title: Text('welcome'),
-        content: Text('Dialog box test learn'),
-        actions: [
-          FloatingActionButton(child: Text('cancel'), onPressed: () {}),
-          FloatingActionButton(child: Text('Accept'), onPressed: () {})
+      body: Column(
+        children: [
+          Expanded(
+            child: AlertDialog(
+              title: Text('welcome'),
+              content: Text('Dialog box test learn'),
+              actions: [
+                FloatingActionButton(child: Text('cancel'), onPressed: () {}),
+                FloatingActionButton(child: Text('Accept'), onPressed: () {}),
+
+              ],
+            ),
+          ),
+          SimpleDialog(
+            title: Text('simple dialogbox '),
+            children:<Widget> [
+              SimpleDialogOption(
+                onPressed: (){},
+                child: Text('option 1'),
+              ),
+              SimpleDialogOption(
+                onPressed: (){},
+                child: Text('option 2'),
+              )
+            ],
+          )
         ],
       ),
     );

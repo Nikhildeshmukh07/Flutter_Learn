@@ -37,30 +37,18 @@ class _ExpansionTileCardState extends State<ExpansionTileCardWidget> {
       ),
       body: ListView(
         children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12.0),
-            child: ExpansionTile(
-              leading: const CircleAvatar(child: Text('A')),
-              title: const Text('tap to expand'),
-              subtitle: const Text('is has picture'),
-              children: <Widget>[
-                const Divider(
-                  thickness: 1.0,
-                  height: 1.0,
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 16.0,
-                      vertical: 8.0,
-                    ),
-                    child: Image.asset('assets/images/5.jpg'),
-                  ),
-                )
-                // Additional content when the tile is expanded
-              ],
-            ),
+          ExpansionTile(
+            leading: const CircleAvatar(child: Text('A')),
+            title: const Text('tap to expand'),
+            subtitle: const Text('is has picture'),
+            children: <Widget>[
+              const Divider(
+                thickness: 1.0,
+                height: 1.0,
+              ),
+              Image.asset('assets/images/5.jpg')
+              // Additional content when the tile is expanded
+            ],
           ),
         ],
       ),

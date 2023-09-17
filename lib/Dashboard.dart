@@ -6,6 +6,7 @@ import 'package:flutter_learn/8RichtextWidget.dart';
 import 'package:flutter_learn/9TabBarDemo.dart';
 import '10HorizontalList.dart';
 import '11ExpansionTileCard.dart';
+import '12Datepicker.dart';
 import '1Helloworld.dart';
 import '4.Handling gestures.dart';
 import '5Changingwidgetsinresponsetoinput.dart';
@@ -123,7 +124,13 @@ class DashboardScreen extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const RunTileCard()));
+                        builder: (context) => const ExpansionTileCardWidget(title: 'expansion tile card')));
+              }
+              else if (newValue == 'Datepickerwidget') {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Datepickerwidget()));
               }
               // You can add more else if blocks for additional items
             },
@@ -135,6 +142,8 @@ class DashboardScreen extends StatelessWidget {
                   value: 'MyList', child: Text('10.Horizontal List')),
               DropdownMenuItem<String>(
                   value: 'RunTileCard', child: Text('11.Tile card')),
+              DropdownMenuItem<String>(
+                  value: 'Datepickerwidget', child: Text('12.Date picker')),
 
               // Add more items here
             ],

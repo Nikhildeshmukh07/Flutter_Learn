@@ -7,7 +7,6 @@ class RunTileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Expansion Tile card',
       theme: ThemeData(primaryColor: Colors.blueAccent),
       home: const ExpansionTileCardWidget(title: 'expansion tile card'),
     );
@@ -39,13 +38,13 @@ class _ExpansionTileCardState extends State<ExpansionTileCardWidget> {
       body: ListView(
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 12.0),
+            padding: const EdgeInsets.symmetric(horizontal: 12.0),
             child: ExpansionTile(
-              leading: CircleAvatar(child: Text('A')),
-              title: Text('tap to expand'),
-              subtitle: Text('is has picture'),
+              leading: const CircleAvatar(child: Text('A')),
+              title: const Text('tap to expand'),
+              subtitle: const Text('is has picture'),
               children: <Widget>[
-                Divider(
+                const Divider(
                   thickness: 1.0,
                   height: 1.0,
                 ),

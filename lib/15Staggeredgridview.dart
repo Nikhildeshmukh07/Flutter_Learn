@@ -17,7 +17,7 @@ class Staggredgridview extends StatelessWidget {
         ),
       ),
       body: MasonryGridView.builder(
-          itemCount: 10,
+          itemCount: 15,
           gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2),
           itemBuilder: (context, index) => Padding(

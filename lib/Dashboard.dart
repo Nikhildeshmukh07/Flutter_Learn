@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter_learn/13Dialogs.dart';
 import 'package:flutter_learn/14Progressbar.dart';
+import 'package:flutter_learn/15Staggeredgridview.dart';
+import 'package:flutter_learn/16Cutomizingfont.dart';
+import 'package:flutter_learn/17Skeletontext.yaml.dart';
 import 'package:flutter_learn/2Appbar.dart';
 import 'package:flutter_learn/3TutorialHome.dart';
 import 'package:flutter_learn/8RichtextWidget.dart';
@@ -126,25 +129,30 @@ class DashboardScreen extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const ExpansionTileCardWidget(title: 'expansion tile card')));
-              }
-              else if (newValue == 'Datepickerwidget') {
+                        builder: (context) => const ExpansionTileCardWidget(
+                            title: 'expansion tile card')));
+              } else if (newValue == 'Datepickerwidget') {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (context) => const Datepickerwidget()));
-              }
-              else if (newValue == 'Dialogbox') {
+              } else if (newValue == 'Dialogbox') {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Dialogs()));
+              } else if (newValue == 'Loader') {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Loader()));
+              } else if (newValue == 'Satggredgridview') {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const Dialogs()));
-              }
-              else if (newValue == 'Loader') {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const Loader()));
+                        builder: (context) => const Staggredgridview()));
+              } else if (newValue == 'customfonts') {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Custumfonts()));
+              } else if (newValue == 'skeletontext') {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Skeletontext()));
               }
               // You can add more else if blocks for additional items
             },
@@ -161,11 +169,23 @@ class DashboardScreen extends StatelessWidget {
               DropdownMenuItem<String>(
                   value: 'Dialogbox', child: Text('13.Dialog box')),
               DropdownMenuItem<String>(
-                  value: 'Loader', child: Text('14. circular progress bar and line bar')),
+                  value: 'Loader',
+                  child: Text('14. circular progress bar and line bar')),
+              DropdownMenuItem<String>(
+                  value: 'Satggredgridview',
+                  child: Text('15. Staggred gridview')),
+              DropdownMenuItem<String>(
+                  value: 'customfonts', child: Text('16. Custum fonts')),
+              DropdownMenuItem<String>(
+                  value: 'skeletontext', child: Text('17. Skeletton texts')),
+              //make new Dropdown button here
 
               // Add more items here
             ],
           ),
+          const Text('Design and animation'),
+          // DropdownButton2
+          //   (items: items, onChanged: onChanged)
         ],
       ),
     );

@@ -5,6 +5,11 @@ import 'package:flutter_learn/14Progressbar.dart';
 import 'package:flutter_learn/15Staggeredgridview.dart';
 import 'package:flutter_learn/16Cutomizingfont.dart';
 import 'package:flutter_learn/17Skeletontext.yaml.dart';
+import 'package:flutter_learn/18Themsofflutter.dart';
+import 'package:flutter_learn/19Lazyloaderview.dart';
+import 'package:flutter_learn/20Orientation.dart';
+import 'package:flutter_learn/21Animationinroute.dart';
+import 'package:flutter_learn/22Physicsanimation.dart';
 import 'package:flutter_learn/2Appbar.dart';
 import 'package:flutter_learn/3TutorialHome.dart';
 import 'package:flutter_learn/8RichtextWidget.dart';
@@ -151,8 +156,10 @@ class DashboardScreen extends StatelessWidget {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => Custumfonts()));
               } else if (newValue == 'skeletontext') {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Skeletontext()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Skeletontext()));
               }
               // You can add more else if blocks for additional items
             },
@@ -179,11 +186,75 @@ class DashboardScreen extends StatelessWidget {
               DropdownMenuItem<String>(
                   value: 'skeletontext', child: Text('17. Skeletton texts')),
               //make new Dropdown button here
-
               // Add more items here
             ],
           ),
           const Text('Design and animation'),
+          DropdownButton2<String>(
+            hint: const Text('-select-'),
+            // Displayed when no item is selected
+            onChanged: (String? newValue) {
+              if (newValue == 'customfonts') {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Custumfonts()));
+              } else if (newValue == 'customfonts') {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Custumfonts()));
+              } else if (newValue == 'skeletontext') {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Skeletontext()));
+              } else if (newValue == 'thems') {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Themsflutter()));
+              } else if (newValue == 'lazy') {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Lazyloader(
+                              titles: '19.Lazy loader',
+                            )));
+              } else if (newValue == 'Orientation') {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MyOrientation(
+                              title: '20.Orientation',
+                            )));
+              } else if (newValue == 'animation') {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Animationpage()));
+              }
+              else if (newValue == 'physic') {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PhysicsCard()));
+              }
+            },
+            items: const <DropdownMenuItem<String>>[
+              DropdownMenuItem<String>(
+                  value: 'customfonts', child: Text('16. Custum fonts')),
+              DropdownMenuItem<String>(
+                  value: 'skeletontext', child: Text('17. Skeletton texts')),
+              DropdownMenuItem<String>(
+                  value: 'thems', child: Text('18. Themes in flutter')),
+              DropdownMenuItem<String>(
+                  value: 'lazy', child: Text('19. Lazy Loader')),
+              DropdownMenuItem<String>(
+                  value: 'Orientation', child: Text('20. Orientation ')),
+              DropdownMenuItem<String>(
+                  value: 'animation', child: Text('21. animation and Route ')),
+              DropdownMenuItem<String>(
+                  value: 'physic', child: Text('22. Physical Animation ')),
+            ],
+          ),
+
           // DropdownButton2
           //   (items: items, onChanged: onChanged)
         ],

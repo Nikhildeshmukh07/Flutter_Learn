@@ -25,13 +25,13 @@ class Custumfonts extends StatelessWidget {
               'Noraml Text',
               style: style,
             ),
-            const Text(
-              'this font style added into pubspec yaml',
-              style: TextStyle(
-                  fontFamily: 'Fuggles',
-                  fontSize: 62,
-                  fontWeight: FontWeight.bold),
-            ),
+            // Text(
+            //   'this font style added into pubspec yaml',
+            //   style: TextStyle(
+            //       fontFamily: 'Fuggles',
+            //       fontSize: 62,
+            //       fontWeight: FontWeight.bold),
+            // ),
             Text('from google fonts',
                 style: GoogleFonts.nabla(textStyle: style)),
           ],

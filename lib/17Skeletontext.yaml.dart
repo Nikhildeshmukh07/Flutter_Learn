@@ -8,7 +8,7 @@ class Skeletontext extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('17.Skeleton text flutter '),
+        title: Text('17.Skeleton flutter '),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {

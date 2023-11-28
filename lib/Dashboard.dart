@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter_learn/13Dialogs.dart';
 import 'package:flutter_learn/14Progressbar.dart';
 import 'package:flutter_learn/15Staggeredgridview.dart';
@@ -10,6 +9,7 @@ import 'package:flutter_learn/19Lazyloaderview.dart';
 import 'package:flutter_learn/20Orientation.dart';
 import 'package:flutter_learn/21Animationinroute.dart';
 import 'package:flutter_learn/22Physicsanimation.dart';
+import 'package:flutter_learn/24HingAnimation.dart';
 import 'package:flutter_learn/2Appbar.dart';
 import 'package:flutter_learn/3TutorialHome.dart';
 import 'package:flutter_learn/8RichtextWidget.dart';
@@ -18,13 +18,108 @@ import '10HorizontalList.dart';
 import '11ExpansionTileCard.dart';
 import '12Datepicker.dart';
 import '1Helloworld.dart';
+import '23Heroanimation.dart';
+import '25LottieAnimation.dart';
 import '4.Handling gestures.dart';
 import '5Changingwidgetsinresponsetoinput.dart';
 import '6DrawerWidgetinFlutter.dart';
 import '7Appbars.dart';
 
 class DashboardScreen extends StatelessWidget {
-  const DashboardScreen({super.key});
+  // const DashboardScreen({super.key});
+
+  static const String helloWolrdRoute = '1.Hello World';
+  static const String myScaffoldRoute = '2.Basic widgets';
+  static const String TutorialHomeRoute = '3.Using Material Components';
+  static const String myButtonRoute = '4.Handling gestures';
+  static const String counterRoute = '5.Changing widgets in response to input';
+  static const String drawerWidgetRoute = '6.Drawer Widget in Flutter';
+  static const String appbardRoutes = '7.Appbars in built widgets';
+  static const String richtextRoutes = '8.Rich Text Widgets';
+  static const String tabbarDemoRoutes = '9.TabBar Demo Routes';
+  static const String horiZontalListRoute = '10.Horizontal List';
+  static const String expensioNalTileCardRoute = '11.Expansion Tile Card';
+  static const String datePickerRoute = '12.Date picker route';
+  static const String dialogsRoute = '13.Dialog box Route';
+  static const String proGressBarRoutes = '14.ProgressBar';
+  static const String staggeredGridRoutes = '15.Staggered Grid View';
+  static const String customizingFontRoutes = '16.Customizing font';
+  static const String skeletonRoutes = '17.Skeleton';
+  static const String themsOfflutterRoutes = '18.Themes of flutter';
+  static const String LazyLoaderRoutes = '19.Lazy Loader View';
+  static const String orienTationRoutes = '20.Orientation ';
+  static const String animationRoutes = '21.Animation Route';
+  static const String physicalAnimationRoutes = '22.Physical Animation';
+  static const String HeroAnimationRoutes = '23.Hero Animation';
+  static const String hingeAnimationRoutes = '24.Hinge Animation';
+  static const String lottiAnimationRoutes = '25.Lottie Animation';
+
+  static const String Routes = '';
+
+  final Map<String, Widget> introductionRoutes = {
+    helloWolrdRoute: HelloWorldScreen(),
+    myScaffoldRoute: MyScaffold(),
+    TutorialHomeRoute: const TutorialHome(),
+    myButtonRoute: MyButton(),
+    counterRoute: const Counter2(),
+  };
+
+  final Map<String, Widget> keyWidgetsRoutes = {
+    drawerWidgetRoute: const MyHomePage(
+      title: 'this is Drawer',
+    ),
+    appbardRoutes: const Appbars(),
+    richtextRoutes: const MyhomepageRichTextBox(),
+  };
+
+  final Map<String, Widget> uiComponentsRoutes = {
+    tabbarDemoRoutes: const TabBarDemo(),
+    horiZontalListRoute: const MyList(),
+    expensioNalTileCardRoute: const ExpansionTileCardWidget(
+      title: 'Expansion Tile Card',
+    ),
+    datePickerRoute: const Datepickerwidget(),
+    dialogsRoute: const Dialogs(),
+    proGressBarRoutes: const Loader(),
+    staggeredGridRoutes: const Staggredgridview(),
+  };
+
+  final Map<String, Widget> designAnimationRoute = {
+    customizingFontRoutes: Custumfonts(),
+    skeletonRoutes: const Skeletontext(),
+    themsOfflutterRoutes: const Themsflutter(),
+    LazyLoaderRoutes: const Lazyloader(
+      titles: 'Lazy loader',
+    ),
+    orienTationRoutes: const MyOrientation(title: 'Orientation '),
+    animationRoutes: const Animationpage(),
+    physicalAnimationRoutes: const PhysicsCard(),
+    HeroAnimationRoutes: const RadialDemoHero(),
+    hingeAnimationRoutes: const HingAnimation(),
+    lottiAnimationRoutes: const LottiePage(),
+  };
+
+  void navigateToScreen(BuildContext context, String routeName, Widget screen) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => screen));
+  }
+
+  DropdownButton<String> buildDropdownButton(
+      BuildContext context, String hint, Map<String, Widget> items) {
+    return DropdownButton<String>(
+      hint: Text(hint),
+      onChanged: (String? newValue) {
+        if (newValue != null && items.containsKey(newValue)) {
+          navigateToScreen(context, newValue, items[newValue]!);
+        }
+      },
+      items: items.keys.map((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,229 +129,15 @@ class DashboardScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          const Text('USer InterFace'),
-          DropdownButton2<String>(
-            hint: const Text('Introduction'),
-            // Displayed when no item is selected
-            onChanged: (String? newValue) {
-              if (newValue == 'Hello World') {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => HelloWorldScreen()),
-                );
-              } else if (newValue == 'MyScaffold') {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => MyScaffold()),
-                );
-              } else if (newValue == 'TutorialHome') {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const TutorialHome()));
-              } else if (newValue == 'MyButton') {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MyButton()));
-              } else if (newValue == 'Counter2') {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Counter2()));
-              }
-
-              // You can add more else if blocks for additional items
-            },
-            items: const <DropdownMenuItem<String>>[
-              // Use DropdownMenuItem
-              DropdownMenuItem<String>(
-                  value: 'Hello World', child: Text('1.Hello World')),
-              DropdownMenuItem<String>(
-                  value: 'MyScaffold', child: Text('2.Basic widgets')),
-              DropdownMenuItem<String>(
-                  value: 'TutorialHome',
-                  child: Text('3.Using Material Components')),
-              DropdownMenuItem<String>(
-                  value: 'MyButton', child: Text('4.Handling gestures')),
-              DropdownMenuItem<String>(
-                  value: 'Counter2',
-                  child: Text('5.Changing widgets in response to input'))
-              // Add more items here
-            ],
-          ),
-          const Text('KeyWidgets'),
-          DropdownButton2<String>(
-            hint: const Text('-select-'),
-            // Displayed when no item is selected
-            onChanged: (String? newValue) {
-              if (newValue == 'MyHomePage') {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const MyHomePage(
-                              title: 'this is drawer',
-                            )));
-              } else if (newValue == 'Appbars') {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Appbars()));
-              } else if (newValue == 'MyhomepageRichTextBox') {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const MyhomepageRichTextBox()));
-              }
-              // You can add more else if blocks for additional items
-            },
-            items: const <DropdownMenuItem<String>>[
-              // Use DropdownMenuItem
-              DropdownMenuItem<String>(
-                  value: 'MyHomePage', child: Text('6.DrawerWidgetinFlutter')),
-              DropdownMenuItem<String>(
-                  value: 'Appbars', child: Text('7.Appbars in built widgets')),
-              DropdownMenuItem<String>(
-                  value: 'MyhomepageRichTextBox',
-                  child: Text('8.Rich text Box')),
-
-              // Add more items here
-            ],
-          ),
-          const Text('Ui Componets'),
-          DropdownButton2<String>(
-            hint: const Text('-select-'),
-            // Displayed when no item is selected
-            onChanged: (String? newValue) {
-              if (newValue == 'TabBarDemo') {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const TabBarDemo()));
-              } else if (newValue == 'MyList') {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const MyList()));
-              } else if (newValue == 'RunTileCard') {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ExpansionTileCardWidget(
-                            title: 'expansion tile card')));
-              } else if (newValue == 'Datepickerwidget') {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const Datepickerwidget()));
-              } else if (newValue == 'Dialogbox') {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Dialogs()));
-              } else if (newValue == 'Loader') {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Loader()));
-              } else if (newValue == 'Satggredgridview') {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const Staggredgridview()));
-              } else if (newValue == 'customfonts') {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Custumfonts()));
-              } else if (newValue == 'skeletontext') {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const Skeletontext()));
-              }
-              // You can add more else if blocks for additional items
-            },
-            items: const <DropdownMenuItem<String>>[
-              // Use DropdownMenuItem
-              DropdownMenuItem<String>(
-                  value: 'TabBarDemo', child: Text('9.TabBarDemo')),
-              DropdownMenuItem<String>(
-                  value: 'MyList', child: Text('10.Horizontal List')),
-              DropdownMenuItem<String>(
-                  value: 'RunTileCard', child: Text('11.Tile card')),
-              DropdownMenuItem<String>(
-                  value: 'Datepickerwidget', child: Text('12.Date picker')),
-              DropdownMenuItem<String>(
-                  value: 'Dialogbox', child: Text('13.Dialog box')),
-              DropdownMenuItem<String>(
-                  value: 'Loader',
-                  child: Text('14. circular progress bar and line bar')),
-              DropdownMenuItem<String>(
-                  value: 'Satggredgridview',
-                  child: Text('15. Staggred gridview')),
-              DropdownMenuItem<String>(
-                  value: 'customfonts', child: Text('16. Custum fonts')),
-              DropdownMenuItem<String>(
-                  value: 'skeletontext', child: Text('17. Skeletton texts')),
-              //make new Dropdown button here
-              // Add more items here
-            ],
-          ),
-          const Text('Design and animation'),
-          DropdownButton2<String>(
-            hint: const Text('-select-'),
-            // Displayed when no item is selected
-            onChanged: (String? newValue) {
-              if (newValue == 'customfonts') {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Custumfonts()));
-              } else if (newValue == 'customfonts') {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Custumfonts()));
-              } else if (newValue == 'skeletontext') {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const Skeletontext()));
-              } else if (newValue == 'thems') {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const Themsflutter()));
-              } else if (newValue == 'lazy') {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const Lazyloader(
-                              titles: '19.Lazy loader',
-                            )));
-              } else if (newValue == 'Orientation') {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const MyOrientation(
-                              title: '20.Orientation',
-                            )));
-              } else if (newValue == 'animation') {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const Animationpage()));
-              }
-              else if (newValue == 'physic') {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const PhysicsCard()));
-              }
-            },
-            items: const <DropdownMenuItem<String>>[
-              DropdownMenuItem<String>(
-                  value: 'customfonts', child: Text('16. Custum fonts')),
-              DropdownMenuItem<String>(
-                  value: 'skeletontext', child: Text('17. Skeletton texts')),
-              DropdownMenuItem<String>(
-                  value: 'thems', child: Text('18. Themes in flutter')),
-              DropdownMenuItem<String>(
-                  value: 'lazy', child: Text('19. Lazy Loader')),
-              DropdownMenuItem<String>(
-                  value: 'Orientation', child: Text('20. Orientation ')),
-              DropdownMenuItem<String>(
-                  value: 'animation', child: Text('21. animation and Route ')),
-              DropdownMenuItem<String>(
-                  value: 'physic', child: Text('22. Physical Animation ')),
-            ],
-          ),
-
-          // DropdownButton2
-          //   (items: items, onChanged: onChanged)
+          const Text('User Interface'),
+          buildDropdownButton(context, 'Select a screen', introductionRoutes),
+          const Text('Key Widgtes'),
+          buildDropdownButton(context, 'Select Key Widgtes', keyWidgetsRoutes),
+          const Text('Ui Components'),
+          buildDropdownButton(context, 'Select Components', uiComponentsRoutes),
+          const Text('Desing and Animation'),
+          buildDropdownButton(
+              context, 'Select Design or Animation', designAnimationRoute),
         ],
       ),
     );

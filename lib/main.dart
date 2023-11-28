@@ -16,6 +16,9 @@ import 'package:flutter_learn/9TabBarDemo.dart';
 import '12Datepicker.dart';
 import '17Skeletontext.yaml.dart';
 import '23Heroanimation.dart';
+import '24HingAnimation.dart';
+import '25LottieAnimation.dart';
+import '26Formvalidator.dart';
 import '4.Handling gestures.dart';
 import '5Changingwidgetsinresponsetoinput.dart';
 import '7Appbars.dart';
@@ -35,9 +38,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: RadialExpansionDemo()
-        //
-        //home: RunTileCard(),
-        );
+        home: FormValidator());
   }
 }

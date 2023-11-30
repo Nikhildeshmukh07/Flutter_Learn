@@ -17,12 +17,12 @@ class _DatepickerwidgetState extends State<Datepickerwidget> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
-        title: Text('12.Date Picker'),
+        title: const Text('12.Date Picker'),
       ),
       body: Center(
         child: Column(
@@ -42,7 +42,7 @@ class _DatepickerwidgetState extends State<Datepickerwidget> {
                     });
                   }
                 },
-                child: Text('choose date'))
+                child: const Text('choose date'))
           ],
         ),
       ),

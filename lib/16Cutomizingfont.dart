@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Custumfonts extends StatelessWidget {
-  TextStyle style = TextStyle(fontSize: 62, fontWeight: FontWeight.bold);
+  TextStyle style = const TextStyle(fontSize: 62, fontWeight: FontWeight.bold);
 
   Custumfonts({super.key});
 
@@ -10,9 +10,9 @@ class Custumfonts extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('16.Cutum fonts google fonts used '),
+        title: const Text('16.Cutum fonts google fonts used '),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },

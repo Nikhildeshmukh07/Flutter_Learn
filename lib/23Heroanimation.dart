@@ -1,4 +1,3 @@
-import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart' show timeDilation;
@@ -32,9 +31,9 @@ class Photo extends StatelessWidget {
 
 class PhtoHeroAnimation extends StatelessWidget {
   const PhtoHeroAnimation({
-    Key? key,
+    super.key,
     required this.child,
-  }) : super(key: key);
+  });
 
   final Widget child;
 
@@ -56,7 +55,7 @@ class RadialDemoHero extends StatelessWidget {
   static const double kMinRadius = 32.0;
   static const double kMaxRadius = 128.0;
   static const opacituCurve =
-      const Interval(0.0, 0.75, curve: Curves.fastOutSlowIn);
+      Interval(0.0, 0.75, curve: Curves.fastOutSlowIn);
 
   static Tween<Rect?> _createTween(Rect? begin, Rect? end) {
     return MaterialRectCenterArcTween(begin: begin, end: end);
@@ -85,7 +84,7 @@ class RadialDemoHero extends StatelessWidget {
             ),
             Text(
               description,
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 20.0),
           ],
@@ -96,7 +95,7 @@ class RadialDemoHero extends StatelessWidget {
 
   Widget _buildHero(
       BuildContext context, String imageName, String description) {
-    return Container(
+    return SizedBox(
       width: kMinRadius * 3.0,
       height: kMinRadius * 3.0,
       child: Hero(
@@ -140,10 +139,10 @@ class RadialDemoHero extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Hero Widget'),
+        title: const Text('Hero Widget'),
         backgroundColor: Colors.blue,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.of(context).pop(); // Updated code
           },

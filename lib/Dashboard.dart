@@ -20,6 +20,9 @@ import '12Datepicker.dart';
 import '1Helloworld.dart';
 import '23Heroanimation.dart';
 import '25LottieAnimation.dart';
+import '26Formvalidator.dart';
+import '27Desugningformsubmission.dart';
+import '28OpenInbrowser.dart';
 import '4.Handling gestures.dart';
 import '5Changingwidgetsinresponsetoinput.dart';
 import '6DrawerWidgetinFlutter.dart';
@@ -53,14 +56,18 @@ class DashboardScreen extends StatelessWidget {
   static const String HeroAnimationRoutes = '23.Hero Animation';
   static const String hingeAnimationRoutes = '24.Hinge Animation';
   static const String lottiAnimationRoutes = '25.Lottie Animation';
+  static const String formsValidation = '26.form validation ';
+  static const String openinBrowserurl = '27.Open in Browser';
 
-  static const String Routes = '';
+  static const String formdesinrote = '27.Formdesign';
 
-  final Map<String, Widget> introductionRoutes = {
-    helloWolrdRoute: HelloWorldScreen(),
-    myScaffoldRoute: MyScaffold(),
+  // static const String Routes = '';
+
+  Map<String, Widget> get introductionRoutes => {
+    helloWolrdRoute: const HelloWorldScreen(),
+    myScaffoldRoute: const MyScaffold(),
     TutorialHomeRoute: const TutorialHome(),
-    myButtonRoute: MyButton(),
+    myButtonRoute: const MyButton(),
     counterRoute: const Counter2(),
   };
 
@@ -91,12 +98,22 @@ class DashboardScreen extends StatelessWidget {
     LazyLoaderRoutes: const Lazyloader(
       titles: 'Lazy loader',
     ),
-    orienTationRoutes: const MyOrientation(title: 'Orientation '),
+    orienTationRoutes: MyOrientation(title: 'Orientation '),
     animationRoutes: const Animationpage(),
     physicalAnimationRoutes: const PhysicsCard(),
     HeroAnimationRoutes: const RadialDemoHero(),
     hingeAnimationRoutes: const HingAnimation(),
     lottiAnimationRoutes: const LottiePage(),
+  };
+
+  final Map<String, Widget> formsandGesturesroute = {
+    formsValidation: FormValidator(),
+    formdesinrote: const Formdesign(),
+    openinBrowserurl: const OpenInbrowser()
+  };
+
+  final Map<String, Widget> navigationandRouting = {
+    openinBrowserurl: const OpenInbrowser()
   };
 
   void navigateToScreen(BuildContext context, String routeName, Widget screen) {
@@ -138,6 +155,9 @@ class DashboardScreen extends StatelessWidget {
           const Text('Desing and Animation'),
           buildDropdownButton(
               context, 'Select Design or Animation', designAnimationRoute),
+          const Text('Forms and Gestures'),
+          buildDropdownButton(
+              context, 'select Forms and Gestures', formsandGesturesroute)
         ],
       ),
     );

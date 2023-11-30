@@ -7,9 +7,9 @@ class TabBarDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('9TabBarDemo'),
+        title: const Text('9TabBarDemo'),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: (){
             Navigator.pop(context);
           },
@@ -28,7 +28,7 @@ class TabBarDemo extends StatelessWidget {
                 Tab( icon: Icon(Icons.grade)),
                 Tab( icon: Icon(Icons.email)),
               ]),
-              title: Text('Tabbar demo'),
+              title: const Text('Tabbar demo'),
             ),
             body: const TabBarView(
               children: [

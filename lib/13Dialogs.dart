@@ -7,9 +7,9 @@ class Dialogs extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Dialogs'),
+        title: const Text('Dialogs'),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -19,25 +19,25 @@ class Dialogs extends StatelessWidget {
         children: [
           Expanded(
             child: AlertDialog(
-              title: Text('welcome'),
-              content: Text('Dialog box test learn'),
+              title: const Text('welcome'),
+              content: const Text('Dialog box test learn'),
               actions: [
-                FloatingActionButton(child: Text('cancel'), onPressed: () {}),
-                FloatingActionButton(child: Text('Accept'), onPressed: () {}),
+                FloatingActionButton(child: const Text('cancel'), onPressed: () {}),
+                FloatingActionButton(child: const Text('Accept'), onPressed: () {}),
 
               ],
             ),
           ),
           SimpleDialog(
-            title: Text('simple dialogbox '),
+            title: const Text('simple dialogbox '),
             children:<Widget> [
               SimpleDialogOption(
                 onPressed: (){},
-                child: Text('option 1'),
+                child: const Text('option 1'),
               ),
               SimpleDialogOption(
                 onPressed: (){},
-                child: Text('option 2'),
+                child: const Text('option 2'),
               )
             ],
           )

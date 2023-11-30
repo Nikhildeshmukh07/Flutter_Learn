@@ -9,7 +9,7 @@ class Themsflutter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final appName = 'Themes of flutter';
+    const appName = 'Themes of flutter';
     return MaterialApp(
       title: appName,
       theme: ThemeData(
@@ -44,7 +44,7 @@ class ViewPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             onBackButtonPressed();
           },
@@ -64,7 +64,7 @@ class ViewPage extends StatelessWidget {
                 Theme.of(context).colorScheme.copyWith(secondary: Colors.red)),
         child: FloatingActionButton(
           onPressed: () {},
-          child: Icon(Icons.arrow_circle_up),
+          child: const Icon(Icons.arrow_circle_up),
         ),
       ),
     );

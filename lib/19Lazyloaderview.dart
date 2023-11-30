@@ -54,7 +54,6 @@ class _LazyloaderState extends State<Lazyloader> {
         onEndOfPage: () => _loadMore(),
         child: ListView.builder(itemBuilder: (context, position) {
           return DemoItem(Position: position);
-
         }),
       ),
     );
@@ -71,26 +70,26 @@ class DemoItem extends StatelessWidget {
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-       child: Column(
-         crossAxisAlignment: CrossAxisAlignment.start,
-         children: <Widget>[
-           Row(
-             crossAxisAlignment: CrossAxisAlignment.center,
-             children: <Widget>[
-               Container(
-                 color: Colors.deepOrange,
-                 height: 40.0,
-                 width: 40.0,
-               ),
-               SizedBox(
-                 width: 8.0,
-               ),
-               Text("Item$Position"),
-             ],
-           ),
-           Text("i am nikhil flutter is future")
-         ],
-       ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  color: Colors.deepOrange,
+                  height: 40.0,
+                  width: 40.0,
+                ),
+                const SizedBox(
+                  width: 8.0,
+                ),
+                Text("Item$Position"),
+              ],
+            ),
+            const Text("i am nikhil flutter is future")
+          ],
+        ),
       ),
     );
   }

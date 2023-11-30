@@ -33,7 +33,7 @@ class _LottiePageState extends State<LottiePage> {
 
 
             ),
-            Container(
+            SizedBox(
               height: 150,
               width: 200,
               child: Lottie.network(

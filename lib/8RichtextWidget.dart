@@ -12,9 +12,9 @@ class _MyhomepageRichTextBoxState extends State<MyhomepageRichTextBox> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Rich text box'),
+        title: const Text('Rich text box'),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -27,7 +27,6 @@ class _MyhomepageRichTextBoxState extends State<MyhomepageRichTextBox> {
           textDirection: TextDirection.rtl,
           softWrap: true,
           maxLines: 1,
-          textScaleFactor: 1,
           text: TextSpan(
               text: 'hello flutter',
               style: DefaultTextStyle.of(context).style,
@@ -35,7 +34,7 @@ class _MyhomepageRichTextBoxState extends State<MyhomepageRichTextBox> {
                 TextSpan(
                     text: 'learn',
                     style: TextStyle(fontWeight: FontWeight.bold))
-              ]),
+              ]), textScaler: const TextScaler.linear(1),
         ),
       ),
       backgroundColor: Colors.lightBlue[50],

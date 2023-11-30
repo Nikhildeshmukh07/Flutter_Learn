@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 class FormValidator extends StatelessWidget {
   var _formKey = GlobalKey<FormState>();
-  var _isLoading = false;
 
   void submit() {
     final isValid = _formKey.currentState!.validate();
@@ -51,7 +50,6 @@ class FormValidator extends StatelessWidget {
                   decoration: const InputDecoration(labelText: 'Password'),
                   obscureText: true,
                   validator: (value) {
-                    // You can add password validation logic here if needed
                     if (value!.isEmpty) {
                       return 'Enter a password!';
                     }

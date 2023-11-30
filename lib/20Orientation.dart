@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class MyApp extends StatelessWidget {
   final appTitle = '20.Orientation';
 
-  const MyApp({Key? key});
+   MyApp({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
 class MyOrientation extends StatelessWidget {
   final String title;
 
-  const MyOrientation({
+  MyOrientation({
     Key? key,
     required this.title,
   }) : super(key: key);

@@ -19,19 +19,19 @@ class _HingAnimationState extends State<HingAnimation>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 2000),
+      duration: const Duration(milliseconds: 2000),
     );
 
     _rotationAnimation = Tween(end: 0.15, begin: 0.0).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Interval(0.0, 0.5, curve: Curves.bounceInOut),
+        curve: const Interval(0.0, 0.5, curve: Curves.bounceInOut),
       ),
     );
     _slideAnimation = Tween(begin: 100.0, end: 600.0).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: Interval(0.5, 1.0, curve: Curves.fastOutSlowIn),
+        curve: const Interval(0.5, 1.0, curve: Curves.fastOutSlowIn),
       ),
     );
 
@@ -39,7 +39,7 @@ class _HingAnimationState extends State<HingAnimation>
       // Initialize _opacityAnimation
       CurvedAnimation(
         parent: _controller,
-        curve: Interval(0.0, 1.0, curve: Curves.easeInOut),
+        curve: const Interval(0.0, 1.0, curve: Curves.easeInOut),
       ),
     );
   }
@@ -69,7 +69,7 @@ class _HingAnimationState extends State<HingAnimation>
         builder: (BuildContext context, Widget? child) => Container(
           width: 200,
           height: 150,
-          padding: EdgeInsets.all(0),
+          padding: const EdgeInsets.all(0),
           margin: EdgeInsets.only(
             left: 100,
             top: _slideAnimation.value,
@@ -97,12 +97,12 @@ class _HingAnimationState extends State<HingAnimation>
       floatingActionButtonLocation:
           FloatingActionButtonLocation.miniCenterFloat,
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.play_arrow),
         backgroundColor: Colors.blue[300],
         onPressed: () {
           _controller.reset();
           _controller.forward();
         },
+        child: const Icon(Icons.play_arrow),
       ),
     );
   }

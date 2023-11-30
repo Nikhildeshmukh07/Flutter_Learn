@@ -5,20 +5,20 @@ class MyList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final title = 'Horizontal list';
+    const title = 'Horizontal list';
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: const Text(title),
         leading: IconButton(
           tooltip: 'back button',
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: (){
             Navigator.pop(context);
           },
         ),
       ),
       body: Container(
-        margin: EdgeInsets.symmetric(vertical: 20.0),
+        margin: const EdgeInsets.symmetric(vertical: 20.0),
         height: 550.0,
         child: ListView(
           scrollDirection: Axis.horizontal,
@@ -26,7 +26,7 @@ class MyList extends StatelessWidget {
             Container(
               height: 480.0,
               width: 240.0,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage(
                         'assets/images/1.jpg'),
@@ -39,7 +39,7 @@ class MyList extends StatelessWidget {
             Container(
               height: 480.0,
               width: 240.0,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage(
                         'assets/images/2.jpg'),
@@ -52,7 +52,7 @@ class MyList extends StatelessWidget {
             Container(
               height: 480.0,
               width: 240.0,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage(
                         'assets/images/4.jpg'),
@@ -65,7 +65,7 @@ class MyList extends StatelessWidget {
             Container(
               height: 480.0,
               width: 240.0,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage(
                         'assets/images/5.jpg'),

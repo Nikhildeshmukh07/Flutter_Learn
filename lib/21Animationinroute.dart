@@ -8,9 +8,9 @@ class Animationpage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('21.Animation and Route'),
+        title: const Text('21.Animation and Route'),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -21,7 +21,7 @@ class Animationpage extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).push(_createRoute());
           },
-          child: Text('go  to page 2'),
+          child: const Text('go  to page 2'),
         ),
       ),
     );

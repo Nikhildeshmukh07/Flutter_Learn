@@ -7,23 +7,23 @@ class MyAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        children: [
-          const IconButton(onPressed: null, icon: Icon(Icons.menu)),
-          Expanded(child: title),
-          const IconButton(
-            onPressed: null,
-            icon: Icon(Icons.search)
-            // tooltip: 'search',
-          )
+    return Row(
+      children: [
+        const IconButton(onPressed: null, icon: Icon(Icons.menu)),
+        Expanded(child: title),
+        const IconButton(
+          onPressed: null,
+          icon: Icon(Icons.search)
+          // tooltip: 'search',
+        )
 
-        ],
-      ),
+      ],
     );
   }
 }
 class MyScaffold extends StatelessWidget {
+  const MyScaffold({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

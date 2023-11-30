@@ -8,16 +8,16 @@ class PhysicsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('22. Physics Animation'),
+        title: const Text('22. Physics Animation'),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
       ),
       body: DraggableCard(
-        child: Container(
+        child: SizedBox(
             height: 50,
             width: 50,
 
@@ -77,6 +77,7 @@ class _DraggableCardState extends State<DraggableCard>
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return GestureDetector(
